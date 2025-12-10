@@ -344,3 +344,81 @@ body {
 .pc-mt-4 {
   margin-top: 1rem;
 }
+
+/* ===========================
+   MOBILE RESPONSIVE RULES
+   =========================== */
+
+@media (max-width: 992px) {
+  .pc-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-grid--3,
+  .pc-grid--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pc-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pc-page-title {
+    font-size: 1.45rem;
+  }
+
+  .pc-card {
+    padding: 1.2rem 1.25rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .col-lg-7,
+  .col-lg-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .pc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pc-form-row {
+    flex-direction: column;
+  }
+
+  .pc-table {
+    min-width: 520px;
+  }
+
+  .pc-page--auth {
+    padding: 2rem 0;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-page-title {
+    font-size: 1.3rem;
+  }
+
+  .pc-card {
+    padding: 1rem;
+  }
+
+  .pc-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}

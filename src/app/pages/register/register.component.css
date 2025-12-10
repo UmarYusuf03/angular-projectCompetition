@@ -7,3 +7,9 @@
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
 }
+
+@media (max-width: 480px) {
+  .auth-card-wrapper {
+    max-width: 100%;
+  }
+}

@@ -18,3 +18,9 @@
   color: var(--pc-text-muted);
   margin-left: 0.2rem;
 }
+
+@media (max-width: 768px) {
+  .dashboard-stat-value {
+    font-size: 1.3rem;
+  }
+}

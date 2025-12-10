@@ -10,18 +10,26 @@
   z-index: 20;
   backdrop-filter: blur(16px);
   background: linear-gradient(
-      to bottom,
-      rgba(248, 250, 252, 0.9),
-      rgba(248, 250, 252, 0.7)
-    );
+    to bottom,
+    rgba(248, 250, 252, 0.96),
+    rgba(248, 250, 252, 0.9)
+  );
   border-bottom: 1px solid rgba(191, 219, 254, 0.7);
+}
+
+.app-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .app-brand {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.6rem 0;
 }
 
 .app-logo-circle {
@@ -59,7 +67,7 @@
   font-size: 0.9rem;
   color: #4b5563;
   text-decoration: none;
-  padding: 0.35rem 0.5rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 999px;
   transition: color 0.12s ease, background 0.12s ease;
 }
@@ -68,6 +76,69 @@
   color: #0b4a8b;
   background: rgba(191, 219, 254, 0.6);
 }
+
+.app-nav-link--active {
+  color: #0b4a8b;
+  background: rgba(191, 219, 254, 0.9);
+}
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile nav toggle */
+
+.app-nav-toggle-input {
+  display: none;
+}
+
+.app-nav-toggle-btn {
+  display: none; /* hidden on desktop */
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 4px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.app-nav-toggle-btn span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: #111827;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+/* Transform lines when checked */
+
+.app-nav-toggle-input:checked + .app-nav-toggle-btn span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.app-nav-toggle-input:checked + .app-nav-toggle-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.app-nav-toggle-input:checked + .app-nav-toggle-btn span:nth-child(3) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* Mobile actions hidden by default on desktop */
+
+.app-header-actions-mobile {
+  display: none;
+}
+
+/* Main */
 
 .app-main {
   flex: 1;
@@ -78,13 +149,63 @@
   padding-bottom: 2.5rem;
 }
 
-@media (max-width: 767px) {
-  .app-header .container {
-    padding-top: 0.4rem;
-    padding-bottom: 0.5rem;
+/* ===========================
+   RESPONSIVE NAV / HEADER
+   =========================== */
+
+@media (max-width: 768px) {
+  .app-header-inner {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .app-nav-toggle-btn {
+    display: inline-flex;
   }
 
   .app-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: rgba(248, 250, 252, 0.98);
+    border-bottom: 1px solid rgba(191, 219, 254, 0.7);
+    padding: 0.4rem 1rem 0.7rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  /* When checkbox checked, show the nav */
+  .app-nav-toggle-input:checked ~ .app-nav {
+    display: flex;
+  }
+
+  .app-nav-link {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .app-header-actions {
+    display: none;
+  }
+
+  .app-header-actions-mobile {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem 0.5rem;
+  }
+
+  .app-header-actions-mobile .pc-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-brand-title {
+    font-size: 1rem;
+  }
+
+  .app-brand-subtitle {
     display: none;
   }
 }

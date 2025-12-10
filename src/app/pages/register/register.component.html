@@ -14,24 +14,40 @@
         <div class="pc-form-row">
           <div class="pc-form-field">
             <label class="pc-label">Full name</label>
-            <input class="pc-input" placeholder="Ayesha Perera" />
+            <input
+              name="fullName"
+              class="pc-input"
+              placeholder="John Doe"
+              [(ngModel)]="registerObj.fullName"
+            />
           </div>
-          <div class="pc-form-field">
+          <!-- <div class="pc-form-field">
             <label class="pc-label">Student ID</label>
             <input class="pc-input" placeholder="IT2025-001" />
-          </div>
+          </div> -->
         </div>
 
         <div class="pc-form-row">
           <div class="pc-form-field">
             <label class="pc-label">Email</label>
             <input
+              name="email"
               type="email"
               class="pc-input"
               placeholder="you@example.edu"
+              [(ngModel)]="registerObj.email"
             />
           </div>
           <div class="pc-form-field">
+            <label class="pc-label">College name</label>
+            <input
+              name="collegeName"
+              class="pc-input"
+              placeholder="University of Moratuwa"
+              [(ngModel)]="registerObj.collegeName"
+            />
+          </div>
+          <!-- <div class="pc-form-field">
             <label class="pc-label">Department</label>
             <select class="pc-select">
               <option selected disabled>Select department</option>
@@ -40,31 +56,58 @@
               <option>Business</option>
               <option>Other</option>
             </select>
-          </div>
+          </div> -->
         </div>
 
         <div class="pc-form-row">
-          <div class="pc-form-field">
+          <div class="pc-form-field" style="position: relative">
             <label class="pc-label">Password</label>
+
             <input
-              type="password"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
               class="pc-input"
               placeholder="Create a password"
+              [(ngModel)]="registerObj.password"
             />
+
+            <!-- Toggle Icon / Button -->
+            <button
+              type="button"
+              (click)="showPassword = !showPassword"
+              style="
+                position: absolute;
+                right: 10px;
+                top: 36px;
+                background: none;
+                border: none;
+                cursor: pointer;
+              "
+            >
+              {{ showPassword ? "🫣" : "👀" }}
+            </button>
           </div>
           <div class="pc-form-field">
             <label class="pc-label">Confirm password</label>
             <input
+              name="confirmPassword"
               type="password"
               class="pc-input"
               placeholder="Repeat password"
+              [(ngModel)]="registerObj.confirmPassword"
             />
           </div>
         </div>
 
         <div class="d-flex justify-content-between align-items-center mt-1">
           <a href="/login" class="pc-link">Already registered? Login</a>
-          <button type="button" class="pc-btn pc-btn--primary">Register</button>
+          <button
+            type="button"
+            (click)="onRegister()"
+            class="pc-btn pc-btn--primary"
+          >
+            Register
+          </button>
         </div>
       </form>
     </div>

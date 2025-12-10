@@ -13,17 +13,49 @@
       <form class="pc-form">
         <div class="pc-form-field">
           <label class="pc-label">Email</label>
-          <input type="email" class="pc-input" placeholder="you@example.edu" />
+          <input
+            type="email"
+            [(ngModel)]="loginObj.email"
+            class="pc-input"
+            placeholder="you@example.edu"
+          />
         </div>
 
-        <div class="pc-form-field">
+        <div class="pc-form-field" style="position: relative">
           <label class="pc-label">Password</label>
-          <input type="password" class="pc-input" placeholder="••••••••" />
+          <input
+            name="password"
+            [type]="showPassword ? 'text' : 'password'"
+            class="pc-input"
+            placeholder="Create a password"
+            [(ngModel)]="loginObj.password"
+          />
+
+          <button
+            type="button"
+            (click)="showPassword = !showPassword"
+            style="
+              position: absolute;
+              right: 10px;
+              top: 36px;
+              background: none;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            {{ showPassword ? "🫣" : "👀" }}
+          </button>
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
           <a href="/register" class="pc-link">Need an account? Register</a>
-          <button type="button" class="pc-btn pc-btn--primary">Login</button>
+          <button
+            type="button"
+            (click)="onLogin()"
+            class="pc-btn pc-btn--primary"
+          >
+            Login
+          </button>
         </div>
       </form>
     </div>

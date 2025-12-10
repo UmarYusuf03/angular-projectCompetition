@@ -1,0 +1,53 @@
+.home-hero-title {
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.home-hero-highlight {
+  color: var(--pc-primary);
+}
+
+.home-hero-text {
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  color: var(--pc-text-muted);
+  max-width: 38rem;
+}
+
+.home-meta {
+  font-size: 0.85rem;
+  color: var(--pc-text-muted);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.home-stats-card {
+  background: radial-gradient(circle at top left, #e8f1ff, #ffffff 55%);
+}
+
+.home-stat-block {
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.home-stat-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pc-text-muted);
+}
+
+.home-stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+.home-stat-foot {
+  font-size: 0.8rem;
+  color: var(--pc-text-muted);
+}

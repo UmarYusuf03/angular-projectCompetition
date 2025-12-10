@@ -1,0 +1,9 @@
+.auth-card-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}

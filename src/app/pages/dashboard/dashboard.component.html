@@ -1,1 +1,99 @@
-<p>dashboard works!</p>
+<div class="pc-page">
+  <div class="pc-page-header">
+    <div>
+      <div class="pc-page-title">Competition dashboard</div>
+      <div class="pc-page-subtitle">
+        Overview of students, projects and current competition status. (Static
+        placeholders for now.)
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+      <a href="/submitProject" class="pc-btn pc-btn--primary">+ New project</a>
+      <a href="/all-projects" class="pc-btn pc-btn--ghost">View all projects</a>
+    </div>
+  </div>
+
+  <div class="pc-grid pc-grid--3 pc-mt-3">
+    <div class="pc-card pc-card--flat">
+      <div class="pc-card-title">Total students</div>
+      <div class="dashboard-stat-value">128</div>
+      <div class="pc-card-subtitle">Enrolled for this competition</div>
+    </div>
+    <div class="pc-card pc-card--flat">
+      <div class="pc-card-title">Projects submitted</div>
+      <div class="dashboard-stat-value">42</div>
+      <div class="pc-card-subtitle">12 awaiting initial review</div>
+    </div>
+    <div class="pc-card pc-card--flat">
+      <div class="pc-card-title">Shortlisted for finals</div>
+      <div class="dashboard-stat-value">8</div>
+      <span class="pc-chip pc-chip--success mt-1">On track</span>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-4">
+    <div class="col-lg-7">
+      <div class="pc-table-wrapper">
+        <table class="pc-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Team</th>
+              <th>Status</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Smart Campus Assistant</td>
+              <td>Team Horizon</td>
+              <td><span class="pc-chip pc-chip--primary">Shortlisted</span></td>
+              <td>86</td>
+            </tr>
+            <tr>
+              <td>Energy Monitor Dashboard</td>
+              <td>Green Labs</td>
+              <td><span class="pc-chip">Under review</span></td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>AI Attendance System</td>
+              <td>VisionX</td>
+              <td><span class="pc-chip pc-chip--success">Accepted</span></td>
+              <td>92</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="pc-card">
+        <div class="pc-card-title">Quick actions</div>
+        <div class="pc-card-subtitle mb-3">
+          Frequently used flows in the competition.
+        </div>
+
+        <ul class="dashboard-actions">
+          <li>
+            <a href="/submitProject" class="pc-link">Submit a new project</a>
+            <span>– upload details & files</span>
+          </li>
+          <li>
+            <a href="/students" class="pc-link">View all registered students</a>
+            <span>– filter by department</span>
+          </li>
+          <li>
+            <a href="/all-projects" class="pc-link">Browse all projects</a>
+            <span>– see status and scores</span>
+          </li>
+        </ul>
+
+        <div class="pc-card-subtitle mt-3">
+          Hint: later you can bind these cards to live counts from your backend.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

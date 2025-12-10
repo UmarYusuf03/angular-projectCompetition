@@ -1,1 +1,73 @@
-<p>submit-project works!</p>
+<div class="pc-page">
+  <div class="pc-page-header">
+    <div>
+      <div class="pc-page-title">Submit a project</div>
+      <div class="pc-page-subtitle">
+        Provide details of your competition entry. You can later connect this
+        form to your API.
+      </div>
+    </div>
+    <div>
+      <a href="/all-projects" class="pc-link">Back to all projects</a>
+    </div>
+  </div>
+
+  <div class="pc-card">
+    <form class="pc-form">
+      <div class="pc-form-row">
+        <div class="pc-form-field">
+          <label class="pc-label">Project title</label>
+          <input class="pc-input" placeholder="E.g. Smart Campus Assistant" />
+        </div>
+        <div class="pc-form-field">
+          <label class="pc-label">Category</label>
+          <select class="pc-select">
+            <option selected disabled>Select category</option>
+            <option>Software / Web</option>
+            <option>Mobile</option>
+            <option>AI / ML</option>
+            <option>IoT / Hardware</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pc-form-field">
+        <label class="pc-label">Short description</label>
+        <textarea
+          class="pc-textarea"
+          placeholder="Describe the project, problem you’re solving and key features."
+        ></textarea>
+      </div>
+
+      <div class="pc-form-row">
+        <div class="pc-form-field">
+          <label class="pc-label">Repository / demo link</label>
+          <input class="pc-input" placeholder="https://github.com/..." />
+        </div>
+        <div class="pc-form-field">
+          <label class="pc-label">Primary student</label>
+          <input class="pc-input" placeholder="Main contact person" />
+        </div>
+      </div>
+
+      <div class="pc-form-row">
+        <div class="pc-form-field">
+          <label class="pc-label">Team members (optional)</label>
+          <input class="pc-input" placeholder="Separate names with commas" />
+        </div>
+        <div class="pc-form-field">
+          <label class="pc-label">Upload file (optional)</label>
+          <input type="file" class="pc-input" />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end gap-2 mt-2">
+        <button type="button" class="pc-btn pc-btn--ghost">Cancel</button>
+        <button type="button" class="pc-btn pc-btn--primary">
+          Submit project
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

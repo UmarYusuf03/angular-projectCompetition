@@ -1,0 +1,20 @@
+.dashboard-stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-actions {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.dashboard-actions li span {
+  color: var(--pc-text-muted);
+  margin-left: 0.2rem;
+}

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +23,7 @@ export class RegisterComponent {
   };
 
   http = inject(HttpClient);
+  router = inject(Router);
 
   onRegister() {
     this.http
@@ -30,7 +32,7 @@ export class RegisterComponent {
         this.registerObj
       )
       .subscribe((res: any) => {
-        alert('Student registration successfull!');
+        this.router.navigate(['/login']);
       });
   }
 }

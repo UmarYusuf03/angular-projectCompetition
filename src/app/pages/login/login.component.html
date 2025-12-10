@@ -14,6 +14,7 @@
         <div class="pc-form-field">
           <label class="pc-label">Email</label>
           <input
+            name="email"
             type="email"
             [(ngModel)]="loginObj.email"
             class="pc-input"
@@ -27,7 +28,7 @@
             name="password"
             [type]="showPassword ? 'text' : 'password'"
             class="pc-input"
-            placeholder="Create a password"
+            placeholder="Enter password"
             [(ngModel)]="loginObj.password"
           />
 
@@ -48,7 +49,9 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
-          <a href="/register" class="pc-link">Need an account? Register</a>
+          <a href="/register" class="pc-link">Need an account? Register</a
+          ><br />
+          <a href="/forgotPassword" class="pc-link">Forgot Password?</a>
           <button
             type="button"
             (click)="onLogin()"

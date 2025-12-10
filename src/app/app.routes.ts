@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StudentsComponent } from './pages/students/students.component';
 import { SubmitProjectComponent } from './pages/submit-project/submit-project.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'all-projects',
     component: ProjectsComponent,
+  },
+  {
+    path: 'forgotPassword',
+    component: ForgotPasswordComponent,
   },
 ];

@@ -1,4 +1,4 @@
-<div class="app-shell">
+<!-- <div class="app-shell">
   <header class="app-header">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="app-brand">
@@ -50,6 +50,92 @@
       <h4>Account</h4>
       <a routerLink="/login">Login</a>
       <a routerLink="/register">Register</a>
+    </div>
+
+    <div class="app-footer-section">
+      <h4>About</h4>
+      <p class="app-footer-small">
+        A platform for students to submit and showcase their innovation
+        projects.
+      </p>
+    </div>
+  </div>
+
+  <div class="app-footer-bottom">
+    © {{ currentYear }} Project Competition — All rights reserved.
+  </div>
+</footer> -->
+
+<div class="app-shell">
+  <header class="app-header">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="app-brand">
+        <div class="app-logo-circle">PC</div>
+        <div>
+          <div class="app-brand-title">Project Competition</div>
+          <div class="app-brand-subtitle">Student Innovation Platform</div>
+        </div>
+      </div>
+
+      <nav class="app-nav d-none d-md-flex">
+        <a routerLink="/home" class="app-nav-link">Home</a>
+        <a routerLink="/all-projects" class="app-nav-link">Projects</a>
+        <a routerLink="/students" class="app-nav-link">Students</a>
+        <a routerLink="/submitProject" class="app-nav-link">Submit Project</a>
+      </nav>
+
+      <!-- Header auth buttons -->
+      <div class="app-header-actions">
+        <ng-container *ngIf="!isLoggedIn">
+          <a routerLink="/login" class="pc-btn pc-btn--ghost">Login</a>
+          <a routerLink="/register" class="pc-btn pc-btn--primary">Register</a>
+        </ng-container>
+
+        <ng-container *ngIf="isLoggedIn">
+          <button class="pc-btn pc-btn--primary" (click)="logout()">
+            Logout
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container app-main-inner">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+<footer class="app-footer">
+  <div class="container app-footer-content">
+    <div class="app-footer-section app-footer-brand">
+      <div class="app-footer-logo">PC</div>
+      <div class="app-footer-title">Project Competition</div>
+      <div class="app-footer-subtitle">Student Innovation Platform</div>
+    </div>
+
+    <div class="app-footer-section">
+      <h4>Navigation</h4>
+      <a routerLink="/home">Home</a>
+      <a routerLink="/all-projects">Projects</a>
+      <a routerLink="/students">Students</a>
+      <a routerLink="/submitProject">Submit Project</a>
+    </div>
+
+    <div class="app-footer-section">
+      <h4>Account</h4>
+
+      <!-- When NOT logged in -->
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+      </ng-container>
+
+      <!-- When logged in -->
+      <ng-container *ngIf="isLoggedIn">
+        <button class="pc-btn pc-btn--ghost" (click)="logout()">Logout</button>
+      </ng-container>
     </div>
 
     <div class="app-footer-section">

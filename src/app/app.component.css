@@ -306,3 +306,9 @@
     font-size: 0.8rem;
   }
 }
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
